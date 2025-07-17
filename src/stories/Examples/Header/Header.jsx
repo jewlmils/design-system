@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { CTAButton } from './Button/CTAButton/CTAButton';
-import { SupportButton } from './Button/SupportButton/SupportButton';
+import { CTAButton } from '../../Button/CTAButton/CTAButton';
+import { SupportButton } from '../../Button/SupportButton/SupportButton';
 import './header.css';
 
 export const Header = ({ user = null, onLogin, onLogout, onCreateAccount }) => (
