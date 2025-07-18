@@ -1,5 +1,3 @@
-
-
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
   "stories": [
@@ -16,6 +14,20 @@ const config = {
   "framework": {
     "name": "@storybook/react-vite",
     "options": {}
-  }
+  },
+  viteFinal: (config) => {
+    config.define = {
+      ...config.define,
+      global: 'globalThis',
+    };
+    
+    // Add resolve extensions for proper file resolution
+    config.resolve = {
+      ...config.resolve,
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.mjs'],
+    };
+    
+    return config;
+  },
 };
 export default config;
